@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>solutionsXE | Intelligent Software Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #06080d;
+      --surface: #0f1524;
+      --surface-soft: #121a2f;
+      --line: #1f2b47;
+      --text: #eef4ff;
+      --muted: #a9b8d6;
+      --brand: #35d0ff;
+      --brand-soft: #2a6bff;
+      --ok: #48f2b4;
+      --radius: 18px;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 5% 10%, rgba(53, 208, 255, 0.16), transparent 35%),
+        radial-gradient(circle at 88% 0%, rgba(42, 107, 255, 0.22), transparent 30%),
+        linear-gradient(170deg, #05070b 0%, #090e19 50%, #0d1423 100%);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .wrap {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 1.2rem 0;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 21, 36, 0.6);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.5rem 0.6rem 0.5rem 1rem;
+      backdrop-filter: blur(8px);
+      animation: fadeDown 0.8s ease both;
+    }
+
+    .brand {
+      font-family: "Sora", sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--ok);
+      box-shadow: 0 0 16px var(--ok);
+    }
+
+    .pill {
+      border: 1px solid #2f4368;
+      background: #0f1f3a;
+      color: #cde6ff;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.75rem;
+      font-weight: 500;
+    }
+
+    .hero {
+      padding: 5.2rem 0 4rem;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+    }
+
+    h1 {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.1;
+      max-width: 14ch;
+      animation: fadeUp 0.8s ease 0.1s both;
+    }
+
+    .sub {
+      color: var(--muted);
+      max-width: 58ch;
+      margin-top: 1.1rem;
+      font-size: 1.02rem;
+      animation: fadeUp 0.8s ease 0.22s both;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.9rem;
+      margin-top: 1.6rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 0.32s both;
+    }
+
+    .btn {
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 12px;
+      padding: 0.72rem 1.1rem;
+      border: 1px solid transparent;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--brand), var(--brand-soft));
+      color: #031220;
+      box-shadow: 0 10px 28px rgba(53, 208, 255, 0.25);
+    }
+
+    .btn.ghost {
+      color: #d6e8ff;
+      border-color: #305287;
+      background: #111b31;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(18, 26, 47, 0.95), rgba(9, 14, 24, 0.95));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+      animation: fadeUp 0.8s ease 0.25s both;
+    }
+
+    .metrics {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .metric {
+      border: 1px solid #26365a;
+      border-radius: 14px;
+      padding: 0.9rem;
+      background: #0f1729;
+    }
+
+    .metric b {
+      font-family: "Sora", sans-serif;
+      font-size: 1.5rem;
+      display: block;
+      color: #f1f7ff;
+    }
+
+    .metric span {
+      color: #a3b3d0;
+      font-size: 0.9rem;
+    }
+
+    .sections {
+      padding-bottom: 4.2rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .mission {
+      margin: 0 0 3rem;
+      background: rgba(10, 23, 56, 0.82);
+      border: 1px solid #263b66;
+      border-radius: 22px;
+      padding: clamp(1.3rem, 4vw, 2.6rem);
+      box-shadow: var(--shadow);
+      animation: fadeUp 0.8s ease 0.18s both;
+    }
+
+    .mission h2 {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(2rem, 7vw, 4.5rem);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .mission p {
+      font-size: clamp(1.35rem, 4.3vw, 2rem);
+      line-height: 1.45;
+      color: #f3f8ff;
+      max-width: 26ch;
+    }
+
+    .vision {
+      margin: 0 0 3.5rem;
+      background: rgba(8, 21, 52, 0.86);
+      border: 1px solid #244071;
+      border-radius: 22px;
+      padding: clamp(1.3rem, 4vw, 2.6rem);
+      box-shadow: var(--shadow);
+      animation: fadeUp 0.8s ease 0.28s both;
+    }
+
+    .vision h2 {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(2rem, 7vw, 4.5rem);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .vision p {
+      font-size: clamp(1.35rem, 4.3vw, 2rem);
+      line-height: 1.45;
+      color: #f3f8ff;
+      max-width: 26ch;
+    }
+
+    .tile {
+      background: rgba(15, 21, 36, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.2rem;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .tile:nth-child(1) { animation-delay: 0.2s; }
+    .tile:nth-child(2) { animation-delay: 0.32s; }
+    .tile:nth-child(3) { animation-delay: 0.44s; }
+
+    .tile h3 {
+      font-family: "Sora", sans-serif;
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .tile p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: #90a4c5;
+      padding: 1.2rem 0 1.8rem;
+      font-size: 0.88rem;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 3.8rem;
+      }
+
+      .sections {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="topbar">
+      <div class="brand"><span class="dot" aria-hidden="true"></span> solutionsXE</div>
+      <span class="pill">Intelligent Product Studio</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Solutions-XE is your digital transformation partner.</h1>
+        <p class="sub">
+          Solutions-XE empowers businesses through tailored software solutions and outsourced expertise. Since 2022, we have combined innovation with deep technical knowledge to help clients across industries achieve operational excellence, scalable growth, and human-centered intelligent products.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#">Talk to Our Team</a>
+          <a class="btn ghost" href="#">Read Our Story</a>
+        </div>
+      </div>
+
+      <aside class="card" aria-label="company highlights">
+        <div class="metrics">
+          <div class="metric">
+            <b>2022</b>
+            <span>Company founded</span>
+          </div>
+          <div class="metric">
+            <b>50+</b>
+            <span>Tailored solutions delivered</span>
+          </div>
+          <div class="metric">
+            <b>Enterprise</b>
+            <span>Trusted by high-value clients</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="sections">
+      <article class="tile">
+        <h3>Custom Platforms</h3>
+        <p>Tailored software platforms designed around each client's operations and goals.</p>
+      </article>
+      <article class="tile">
+        <h3>Outsourced Expertise</h3>
+        <p>Dedicated engineering talent that integrates smoothly with teams and delivery pipelines.</p>
+      </article>
+      <article class="tile">
+        <h3>Intelligent Products</h3>
+        <p>AI-ready and data-driven product experiences built with a strong human-centered mindset.</p>
+      </article>
+    </section>
+
+    <section class="mission" aria-label="company mission">
+      <h2>Mission</h2>
+      <p>
+        To be a trusted digital transformation partner across Egypt, the GCC, and Europe, enabling organizations to unlock innovation, accelerate growth, and lead in the digital era.
+      </p>
+    </section>
+
+    <section class="vision" aria-label="company vision">
+      <h2>Vision</h2>
+      <p>
+        We help businesses in Egypt, the GCC, and Europe innovate and grow through smart, tailored software that enhances operations and customer experiences.
+      </p>
+    </section>
+  </main>
+
+  <footer class="wrap">solutionsXE © 2022-2026 | Building intelligent products that matter.</footer>
+</body>
+</html>
+
