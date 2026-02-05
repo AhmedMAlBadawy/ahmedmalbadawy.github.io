@@ -61,8 +61,8 @@
     }
 
     .topbar {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
       align-items: center;
       background: rgba(15, 21, 36, 0.6);
       border: 1px solid var(--line);
@@ -99,14 +99,18 @@
       font-size: 0.8rem;
       padding: 0.4rem 0.75rem;
       font-weight: 500;
+      margin-left: auto;
     }
 
     .nav {
       display: flex;
       gap: 0.8rem;
       align-items: center;
-      flex-wrap: wrap;
-      margin-left: auto;
+      flex-wrap: nowrap;
+      margin-left: 0;
+      flex: 1;
+      justify-content: center;
+      white-space: nowrap;
     }
 
     .nav a {
@@ -116,6 +120,9 @@
       padding: 0.35rem 0.55rem;
       border-radius: 999px;
       border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
       transition: border-color 0.2s ease, color 0.2s ease;
     }
 
@@ -265,6 +272,7 @@
       <p class="section-sub">Senior leaders guiding delivery with enterprise-grade governance and deep industry expertise.</p>
       <div class="grid-3">
         <div class="card-soft"><h3>Ahmed Albadawy</h3><p>Founder & CEO — Digital transformation, enterprise delivery strategy, and client success.</p></div>
+        <div class="card-soft"><h3>Mohamed Nafady</h3><p>Co-Founder & CTO — Platform architecture, engineering excellence, and technology strategy.</p></div>
         <div class="card-soft"><h3>Solutions Architecture</h3><p>Cloud, data platforms, and secure integration across complex environments.</p></div>
         <div class="card-soft"><h3>Delivery Leadership</h3><p>Program governance, agile delivery, and operational excellence.</p></div>
       </div>

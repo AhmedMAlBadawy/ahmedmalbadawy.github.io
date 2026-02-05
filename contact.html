@@ -61,8 +61,8 @@
     }
 
     .topbar {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
       align-items: center;
       background: rgba(15, 21, 36, 0.6);
       border: 1px solid var(--line);
@@ -99,14 +99,18 @@
       font-size: 0.8rem;
       padding: 0.4rem 0.75rem;
       font-weight: 500;
+      margin-left: auto;
     }
 
     .nav {
       display: flex;
       gap: 0.8rem;
       align-items: center;
-      flex-wrap: wrap;
-      margin-left: auto;
+      flex-wrap: nowrap;
+      margin-left: 0;
+      flex: 1;
+      justify-content: center;
+      white-space: nowrap;
     }
 
     .nav a {
@@ -116,6 +120,9 @@
       padding: 0.35rem 0.55rem;
       border-radius: 999px;
       border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
       transition: border-color 0.2s ease, color 0.2s ease;
     }
 
@@ -177,6 +184,14 @@
       font-size: 1.02rem;
     }
 
+    .contact-grid {
+      margin-top: 1.4rem;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 1.6rem;
+      align-items: start;
+    }
+
     .contact-details {
       margin-top: 0.9rem;
       display: grid;
@@ -196,18 +211,111 @@
     }
 
     .contact-form {
-      margin-top: 1.4rem;
       border: 1px solid #1f2d4a;
       border-radius: 16px;
-      overflow: hidden;
-      background: #0b1324;
+      background: linear-gradient(180deg, rgba(16, 27, 51, 0.95), rgba(9, 14, 24, 0.95));
+      box-shadow: 0 18px 40px rgba(2, 6, 20, 0.45);
+      padding: 1.2rem;
     }
 
-    .contact-form iframe {
+    .contact-form form {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 0.8rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+      color: #cfe0ff;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
       width: 100%;
-      min-height: 1500px;
-      border: 0;
-      display: block;
+      border-radius: 12px;
+      border: 1px solid #2a3f69;
+      background: #0c162c;
+      color: #e7f1ff;
+      padding: 0.65rem 0.75rem;
+      font-size: 0.95rem;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      outline: none;
+      border-color: #4dd4ff;
+      box-shadow: 0 0 0 3px rgba(77, 212, 255, 0.15);
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn.is-loading {
+      pointer-events: none;
+      opacity: 0.8;
+      position: relative;
+    }
+
+    .btn.is-loading::after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(3, 18, 32, 0.35);
+      border-top-color: #031220;
+      border-radius: 50%;
+      display: inline-block;
+      margin-left: 0.6rem;
+      animation: spin 0.7s linear infinite;
+    }
+
+    .form-note {
+      color: #9fb4d8;
+      font-size: 0.85rem;
+    }
+
+    .toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      background: rgba(12, 22, 44, 0.95);
+      border: 1px solid #2a3f69;
+      color: #e7f1ff;
+      padding: 0.85rem 1.1rem;
+      border-radius: 14px;
+      box-shadow: 0 18px 40px rgba(2, 6, 20, 0.45);
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 50;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .toast b {
+      color: #48f2b4;
     }
 
     footer {
@@ -222,11 +330,24 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
     @media (max-width: 900px) {
       .nav {
         width: 100%;
         justify-content: flex-start;
         margin-left: 0;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -256,16 +377,99 @@
     <section class="contact" aria-label="contact details">
       <h2>Contact Details</h2>
       <p>Reach out to start a conversation about your next product or transformation initiative.</p>
-      <div class="contact-details">
-        <span>Email: <a href="mailto:ahmed.albadawy@solutionsxe.org">ahmed.albadawy@solutionsxe.org</a></span>
-        <span>Mobile: <a href="tel:+201008360025">01008360025</a></span>
-      </div>
-      <div class="contact-form" aria-label="contact form">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfn93nIQHtCclhoVbuBdkEZccNsT9Y_LOr59dBaSZQ6eU1nwQ/viewform?embedded=true" loading="lazy" title="Contact form">Loading…</iframe>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-details">
+            <span>Email: <a href="mailto:ahmed.albadawy@solutionsxe.org">ahmed.albadawy@solutionsxe.org</a></span>
+            <span>Mobile: <a href="tel:+201008360025">01008360025</a></span>
+          </div>
+        </div>
+        <div class="contact-form" aria-label="contact form">
+          <form action="https://docs.google.com/forms/d/e/1FAIpQLSfn93nIQHtCclhoVbuBdkEZccNsT9Y_LOr59dBaSZQ6eU1nwQ/formResponse" method="post" target="hidden_iframe" dir="ltr" data-gform>
+            <div class="form-row">
+              <label>
+                Full Name *
+                <input type="text" name="entry.1181356205" placeholder="Your full name" required />
+              </label>
+              <label>
+                Work Email *
+                <input type="email" name="entry.851006266" placeholder="you@company.com" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                Mobile *
+                <input type="tel" name="entry.1638137832" placeholder="+20 ..." required />
+              </label>
+              <label>
+                Company
+                <input type="text" name="entry.601511198" placeholder="Company or organization" />
+              </label>
+            </div>
+            <label>
+              Purpose of Contact *
+              <select name="entry.1685710701" required>
+                <option value="" disabled selected>Select a purpose</option>
+                <option>New project inquiry</option>
+                <option>Request a consultation</option>
+                <option>Outsourcing / team augmentation</option>
+                <option>Support or existing project</option>
+                <option>Partnership or reseller</option>
+                <option>Careers / hiring</option>
+                <option>Media / press</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>
+              Project Details *
+              <textarea name="entry.304695852" placeholder="Share a brief overview, goals, and timeline." required></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="btn primary" type="submit" data-submit>Send Inquiry</button>
+              <span class="form-note" data-note>We typically respond within 1–2 business days.</span>
+            </div>
+          </form>
+          <iframe name="hidden_iframe" style="display:none;"></iframe>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="wrap">solutionsXE © 2022-2026 | Building intelligent products that matter.</footer>
+  <div class="toast" id="formToast" role="status" aria-live="polite">
+    <b>Received.</b> We will contact you within 1-2 business days.
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const forms = document.querySelectorAll("form[data-gform]");
+      const toast = document.getElementById("formToast");
+      forms.forEach((form) => {
+        const submitBtn = form.querySelector("[data-submit]");
+        const note = form.querySelector("[data-note]");
+        if (!submitBtn) return;
+
+        form.addEventListener("submit", () => {
+          if (submitBtn.disabled) return;
+          submitBtn.disabled = true;
+          submitBtn.classList.add("is-loading");
+          const originalText = submitBtn.textContent;
+          submitBtn.textContent = "Sending...";
+          if (note) note.textContent = "Submitting your inquiry...";
+
+          setTimeout(() => {
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("is-loading");
+            submitBtn.textContent = originalText;
+            if (note) note.textContent = "Submitted. We will respond within 1–2 business days.";
+            if (toast) {
+              toast.classList.add("show");
+              setTimeout(() => toast.classList.remove("show"), 3000);
+            }
+          }, 1800);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
