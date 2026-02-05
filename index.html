@@ -245,6 +245,87 @@
       max-width: 26ch;
     }
 
+    .contact {
+      margin: 0 0 3.5rem;
+      background: rgba(11, 20, 44, 0.88);
+      border: 1px solid #23406d;
+      border-radius: 22px;
+      padding: clamp(1.3rem, 4vw, 2.2rem);
+      box-shadow: var(--shadow);
+      animation: fadeUp 0.8s ease 0.34s both;
+    }
+
+    .contact h2 {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .contact-details {
+      margin-top: 0.9rem;
+      display: grid;
+      gap: 0.5rem;
+      font-size: 1.02rem;
+    }
+
+    .contact-details a {
+      color: #dbeaff;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .contact-details a:hover {
+      border-color: #4dd4ff;
+    }
+
+    .contact-form {
+      margin-top: 1.4rem;
+      border: 1px solid #1f2d4a;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #0b1324;
+    }
+
+    .contact-toggle {
+      margin-top: 1.1rem;
+      border: 1px solid #20355a;
+      border-radius: 14px;
+      background: rgba(11, 19, 36, 0.7);
+      padding: 0.6rem 0.9rem;
+      cursor: pointer;
+      color: #dbeaff;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+    }
+
+    .contact-toggle:hover {
+      border-color: #3b5b93;
+    }
+
+    .contact-toggle::marker {
+      content: "";
+    }
+
+    .contact-details-panel {
+      margin-top: 0.6rem;
+    }
+
+    .contact-form iframe {
+      width: 100%;
+      min-height: 1500px;
+      border: 0;
+      display: block;
+    }
+
     .tile {
       background: rgba(15, 21, 36, 0.88);
       border: 1px solid var(--line);
@@ -364,9 +445,23 @@
         We help businesses in Egypt, the GCC, and Europe innovate and grow through smart, tailored software that enhances operations and customer experiences.
       </p>
     </section>
+
+    <section class="contact" aria-label="contact details">
+      <h2>Contact</h2>
+      <p>Reach out to start a conversation about your next product or transformation initiative.</p>
+      <div class="contact-details">
+        <span>Email: <a href="mailto:ahmed.albadawy@solutionsxe.org">ahmed.albadawy@solutionsxe.org</a></span>
+        <span>Mobile: <a href="tel:+201008360025">01008360025</a></span>
+      </div>
+      <details class="contact-details-panel">
+        <summary class="contact-toggle">Contact Us</summary>
+        <div class="contact-form" aria-label="contact form">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfn93nIQHtCclhoVbuBdkEZccNsT9Y_LOr59dBaSZQ6eU1nwQ/viewform?embedded=true" loading="lazy" title="Contact form">Loading…</iframe>
+        </div>
+      </details>
+    </section>
   </main>
 
   <footer class="wrap">solutionsXE © 2022-2026 | Building intelligent products that matter.</footer>
 </body>
 </html>
-
