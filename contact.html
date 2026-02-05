@@ -184,32 +184,6 @@
       font-size: 1.02rem;
     }
 
-    .contact-grid {
-      margin-top: 1.4rem;
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 1.6rem;
-      align-items: start;
-    }
-
-    .contact-details {
-      margin-top: 0.9rem;
-      display: grid;
-      gap: 0.5rem;
-      font-size: 1.02rem;
-    }
-
-    .contact-details a {
-      color: #dbeaff;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    .contact-details a:hover {
-      border-color: #4dd4ff;
-    }
-
     .contact-form {
       border: 1px solid #1f2d4a;
       border-radius: 16px;
@@ -342,10 +316,6 @@
         margin-left: 0;
       }
 
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
       .form-row {
         grid-template-columns: 1fr;
       }
@@ -377,14 +347,7 @@
     <section class="contact" aria-label="contact details">
       <h2>Contact Details</h2>
       <p>Reach out to start a conversation about your next product or transformation initiative.</p>
-      <div class="contact-grid">
-        <div>
-          <div class="contact-details">
-            <span>Email: <a href="mailto:ahmed.albadawy@solutionsxe.org">ahmed.albadawy@solutionsxe.org</a></span>
-            <span>Mobile: <a href="tel:+201008360025">01008360025</a></span>
-          </div>
-        </div>
-        <div class="contact-form" aria-label="contact form">
+      <div class="contact-form" aria-label="contact form">
           <form action="https://docs.google.com/forms/d/e/1FAIpQLSfn93nIQHtCclhoVbuBdkEZccNsT9Y_LOr59dBaSZQ6eU1nwQ/formResponse" method="post" target="hidden_iframe" dir="ltr" data-gform>
             <div class="form-row">
               <label>
@@ -430,7 +393,6 @@
             </div>
           </form>
           <iframe name="hidden_iframe" style="display:none;"></iframe>
-        </div>
       </div>
     </section>
   </main>
