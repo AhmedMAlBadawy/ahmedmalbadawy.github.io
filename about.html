@@ -40,6 +40,10 @@
       overflow-x: hidden;
     }
 
+    body.menu-open {
+      overflow: hidden;
+    }
+
     body::before {
       content: "";
       position: fixed;
@@ -137,8 +141,72 @@
       background: rgba(17, 27, 49, 0.7);
     }
 
-    .nav .cta {\n      border: 1px solid transparent;\n      background: transparent;\n      color: #dbeaff;\n      font-weight: 600;\n      padding: 0.45rem 0.85rem;\n    }\n\n    .nav .cta.active {\n      border-color: #2f4368;\n      background: #0f1f3a;\n    }
+    .nav .cta {
+      border: 1px solid transparent;
+      background: transparent;
+      color: #dbeaff;
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+    }
 
+    .nav .cta.active {
+      border-color: #2f4368;
+      background: #0f1f3a;
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid #2f4368;
+      background: #0f1f3a;
+      color: #dbeaff;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      position: relative;
+    }
+
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .menu-toggle span::before {
+      top: -6px;
+    }
+
+    .menu-toggle span::after {
+      top: 6px;
+    }
+
+    .menu-close {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid #2f4368;
+      background: #0f1f3a;
+      color: #dbeaff;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
     .hero {
       padding: 4.6rem 0 3.4rem;
       display: grid;
@@ -227,13 +295,94 @@
         grid-template-columns: 1fr;
       }
     }
+
+  
+        @media (max-width: 640px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(80vw, 320px);
+        background: rgba(12, 22, 44, 0.98);
+        border-left: 1px solid #22365f;
+        padding: 1rem 1rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        transform: translateX(110%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        z-index: 60;
+      }
+
+      .nav.is-open {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .menu-close {
+        display: inline-flex;
+        align-self: flex-end;
+      }
+
+      .topbar {
+        grid-template-columns: auto auto;
+        row-gap: 0.6rem;
+        padding: 0.6rem;
+        border-radius: 24px;
+      }
+
+      .brand {
+        font-size: 0.9rem;
+      }
+
+      .nav a {
+        padding: 0.55rem 0.75rem;
+        font-size: 0.9rem;
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .pill {
+        font-size: 0.72rem;
+        padding: 0.3rem 0.6rem;
+      }
+    }
+
+@media (max-width: 520px) {
+      .topbar {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .brand {
+        justify-content: center;
+      }
+
+      .pill {
+        margin-left: 0;
+        justify-self: center;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="wrap">
     <div class="topbar">
       <div class="brand"><span class="dot" aria-hidden="true"></span> Solutions-XE</div>
+      <button class="menu-toggle" type="button" aria-label="toggle menu" aria-expanded="false">
+        <span></span>
+      </button>
       <nav class="nav" aria-label="primary">
+        <button class="menu-close" type="button" aria-label="close menu">×</button>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="case-studies.html">Case Studies</a>
@@ -292,6 +441,40 @@
   </main>
 
   <footer class="wrap">Solutions-XE © 2022-2026 | Building intelligent products that matter.</footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav");
+      if (!toggle || !nav) return;
+      const closeBtn = nav.querySelector(".menu-close");
+      const navLinks = nav.querySelectorAll("a");
+      const closeMenu = () => {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+      };
+
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        document.body.classList.toggle("menu-open", isOpen);
+      });
+
+      if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+      navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+    });
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
