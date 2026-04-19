@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solutions-XE | CuraX — Medical AI Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css?v=3" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#1f2b47" />
+  <meta name="description" content="CuraX — Medical AI Assistant and secure workspace for healthcare operations with an embedded assistant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Solutions-XE | CuraX Medical AI Assistant" />
+  <meta property="og:description" content="CuraX — Medical AI Assistant and secure workspace for healthcare operations with an embedded assistant." />
+  <meta property="og:url" content="https://solutionsxe.org/curax.html" />
+</head>
+<body>
+  <header class="wrap">
+    <div class="topbar">
+      <div class="brand"><span class="dot" aria-hidden="true"></span> Solutions-XE</div>
+      <button class="menu-toggle" type="button" aria-label="toggle menu" aria-expanded="false">
+        <span></span>
+      </button>
+      <nav class="nav" aria-label="primary">
+        <button class="menu-close" type="button" aria-label="close menu">×</button>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a class="active" href="products.html">Products</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="about.html">About</a>
+        <a class="cta" href="contact.html">Contact</a>
+      </nav>
+      <span class="pill">Intelligent Product Studio</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero hero--page">
+      <h1>CuraX — Medical AI Assistant</h1>
+      <p class="sub">A business lens on CuraX as a Medical Assistant product: one digital workspace for patient and operational workflows, a consistent brand experience, and an embedded CuraX assistant staff can talk to for guidance—without leaving the app. AI powers the assistant and much of the intelligence behind faster, clearer work.</p>
+      <div class="actions">
+        <a class="btn primary" href="contact.html">Discuss this product</a>
+        <a class="btn ghost" href="index.html">Back to home</a>
+      </div>
+    </section>
+
+    <section class="section-wrap" aria-label="what it is">
+      <h2 class="section-title">What it is</h2>
+      <div class="prose">
+        <p>CuraX is a Medical Assistant product: a digital workspace for healthcare and related organizations to run day-to-day patient and operational workflows in one place—backed by a clear brand experience, including an embedded CuraX assistant users can talk to for guidance in the app.</p>
+      </div>
+    </section>
+
+    <section class="section-wrap" aria-label="who it serves">
+      <h2 class="section-title">Who it serves</h2>
+      <p class="section-sub">Teams that need a governed coordination layer—not only clinical systems of record, but the workspace staff use every day.</p>
+      <div class="grid-2">
+        <div class="card-soft">
+          <h3>Healthcare organizations &amp; clinics</h3>
+          <p>Organizations that need a consistent way to manage patient-related activity and internal operations across the care journey.</p>
+        </div>
+        <div class="card-soft">
+          <h3>Operational &amp; administrative teams</h3>
+          <p>Teams who onboard users, manage access, and keep work moving across locations or departments.</p>
+        </div>
+        <div class="card-soft">
+          <h3>Clinical &amp; support staff</h3>
+          <p>People who benefit from structured patient context and fewer handoffs through informal channels like email and chat sprawl.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap" aria-label="problem">
+      <h2 class="section-title">What problem it addresses</h2>
+      <div class="prose">
+        <p>Many organizations still depend on a mix of email, spreadsheets, and disconnected tools for patient coordination, permissions, and follow-up. That creates delays, errors, and weak accountability. CuraX’s business intent is to give teams a single, governed environment where the right people see the right patient and organizational work—with security and roles treated as part of the product, not an afterthought.</p>
+      </div>
+    </section>
+
+    <section class="section-wrap" aria-label="business outcomes">
+      <h2 class="section-title">What the business is trying to achieve</h2>
+      <p class="section-sub">Strategic outcomes the product is designed to support, including differentiation through the in-app assistant.</p>
+      <div class="grid-3">
+        <div class="card-soft">
+          <h3>Operational efficiency</h3>
+          <p>Less time searching for information; repeatable workflows for common tasks.</p>
+        </div>
+        <div class="card-soft">
+          <h3>Trust &amp; compliance posture</h3>
+          <p>Access tied to organization and role so sensitive patient-oriented work is not “everyone sees everything.”</p>
+        </div>
+        <div class="card-soft">
+          <h3>Better patient experience</h3>
+          <p>Fewer dropped requests and clearer ownership when multiple people touch a case.</p>
+        </div>
+        <div class="card-soft">
+          <h3>Scalable multi-organization delivery</h3>
+          <p>The same product can serve many customers (organizations) with their own users, data boundaries, and administration—typical of a B2B SaaS model.</p>
+        </div>
+        <div class="card-soft">
+          <h3>Differentiation through assistance</h3>
+          <p>The CuraX assistant is positioned as an in-product guide—helping users get answers and complete steps without leaving the workflow. The exact scope of advice remains what you define clinically and legally in your go-to-market.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">Solutions-XE © 2022-2026 | Building intelligent products that matter.</footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".nav");
+      if (!toggle || !nav) return;
+      const closeBtn = nav.querySelector(".menu-close");
+      const navLinks = nav.querySelectorAll("a");
+      const closeMenu = () => {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+      };
+
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        document.body.classList.toggle("menu-open", isOpen);
+      });
+
+      if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+      navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+    });
+  </script>
+</body>
+</html>
