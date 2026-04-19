@@ -425,6 +425,24 @@
       font-size: 0.95rem;
     }
 
+    .program-badge {
+      margin-top: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .program-badge img {
+      width: min(240px, 100%);
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #2a3f69;
+      background: #0f1524;
+    }
+
+    .card-soft .program-badge img {
+      width: min(205px, 100%);
+    }
+
     .logo-strip {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
