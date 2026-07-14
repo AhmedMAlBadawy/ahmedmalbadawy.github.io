@@ -6,8 +6,8 @@
   <title>Solutions-XE | Case Studies</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/site.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css?v=4" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#1f2b47" />
   <meta name="description" content="Case studies and delivery highlights: modernization, analytics, healthcare, and logistics outcomes." />
@@ -17,107 +17,127 @@
   <meta property="og:url" content="https://solutionsxe.org/case-studies.html" />
 </head>
 <body>
-  <header class="wrap">
-    <div class="topbar">
-      <div class="brand"><span class="dot" aria-hidden="true"></span> Solutions-XE</div>
-      <button class="menu-toggle" type="button" aria-label="toggle menu" aria-expanded="false">
-        <span></span>
-      </button>
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand-link" href="index.html" aria-label="Solutions-XE home">
+        <img class="logo-lockup" src="assets/logo-lockup-nav.svg" alt="Solutions-XE" width="190" height="50" />
+        <img class="logo-mark" src="assets/logo-mark.svg" alt="" width="32" height="32" />
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
       <nav class="nav" aria-label="primary">
-        <button class="menu-close" type="button" aria-label="close menu">×</button>
+        <button class="menu-close" type="button" aria-label="Close menu">×</button>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="products.html">Products</a>
         <a class="active" href="case-studies.html">Case Studies</a>
         <a href="insights.html">Insights</a>
         <a href="about.html">About</a>
-        <a class="cta" href="contact.html">Contact</a>
+        <a class="btn primary" href="contact.html">Talk to us</a>
       </nav>
-      <span class="pill">Intelligent Product Studio</span>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero hero--page">
-      <h1>Results-driven delivery with measurable business impact.</h1>
-      <p class="sub">A selection of engagements that highlight enterprise transformation, platform modernization, and intelligent product delivery.</p>
+  <main>
+    <section class="wrap hero hero--page">
+      <p class="eyebrow"><span class="eyebrow__mark" aria-hidden="true">↗</span> Case studies</p>
+      <h1>Results-driven delivery with measurable impact.</h1>
+      <p class="sub">Selected engagements across enterprise transformation, platform modernization, and intelligent product delivery.</p>
       <div class="actions">
-        <a class="btn primary" href="contact.html">Request a Consultation</a>
-        <a class="btn ghost" href="services.html">Explore Services</a>
+        <a class="btn primary" href="contact.html">Talk to us</a>
+        <a class="btn secondary" href="services.html">Explore services</a>
       </div>
     </section>
 
-    <section class="section-wrap" aria-label="case studies">
-      <h2 class="section-title">Featured Case Studies</h2>
-      <p class="section-sub">Outcomes aligned to strategy, compliance, and operational excellence.</p>
-      <div class="grid-2">
-        <a class="card-soft" href="medical-tourism-platform.html"><h3>Smart Medical Tourism Platform</h3><p>AI-first operating backbone for international medical travel: coordinated journeys for patients, providers, facilitators, and payers—from inquiry to settlement. Accepted into the NVIDIA Inception program for startups.</p><span class="program-badge"><img src="assets/nvidia-inception-badge.svg" alt="NVIDIA Inception program accepted startup member badge" loading="lazy" /></span><span class="link-hint">View product overview →</span></a>
-        <a class="card-soft" href="curax.html"><h3>CuraX — Medical AI Assistant</h3><p>Secure workspace and workflow hub for healthcare operations, with an embedded assistant so staff get answers and move work forward in one place. Accepted into the NVIDIA Inception program for startups.</p><span class="program-badge"><img src="assets/nvidia-inception-badge.svg" alt="NVIDIA Inception program accepted startup member badge" loading="lazy" /></span><span class="link-hint">View product overview →</span></a>
-        <div class="card-soft"><h3>Regional Bank Modernization</h3><p>Unified onboarding, automated compliance checks, and reduced account opening time by 62%.</p></div>
-        <div class="card-soft"><h3>Retail Analytics Platform</h3><p>Real-time sales intelligence across 200+ stores, improving forecast accuracy by 35%.</p></div>
-        <div class="card-soft"><h3>Healthcare Scheduling Suite</h3><p>Centralized patient scheduling with automated reminders, reducing no-shows by 28%.</p></div>
-        <div class="card-soft"><h3>Logistics Control Tower</h3><p>Live fleet visibility and routing optimization, cutting delivery delays by 22%.</p></div>
+    <section class="section" aria-label="Case studies">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow__mark" aria-hidden="true">↗</span> Featured</p>
+          <h2>Outcomes aligned to strategy and operations.</h2>
+          <p class="section-sub">Products and client programs with clear metrics.</p>
+        </div>
+        <div class="grid-2">
+          <a class="card" href="medical-tourism-platform.html">
+            <h3>Smart Medical Tourism Platform</h3>
+            <p>AI-first operating backbone for international medical travel. NVIDIA Inception member.</p>
+            <span class="program-badge"><img src="assets/nvidia-inception-badge.svg" alt="NVIDIA Inception program accepted startup member badge" loading="lazy" /></span>
+            <span class="link-hint">See the product →</span>
+          </a>
+          <a class="card" href="curax.html">
+            <h3>CuraX — Medical AI Assistant</h3>
+            <p>Secure workspace and workflow hub with an embedded assistant. NVIDIA Inception member.</p>
+            <span class="program-badge"><img src="assets/nvidia-inception-badge.svg" alt="NVIDIA Inception program accepted startup member badge" loading="lazy" /></span>
+            <span class="link-hint">See the product →</span>
+          </a>
+          <article class="card">
+            <h3>Regional Bank Modernization</h3>
+            <p>Unified onboarding and automated compliance checks.</p>
+            <div class="stats" style="margin-top: 24px; grid-template-columns: 1fr;">
+              <div class="stat stat--accent"><b>62%</b><span>Faster account opening</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Retail Analytics Platform</h3>
+            <p>Real-time sales intelligence across 200+ stores.</p>
+            <div class="stats" style="margin-top: 24px; grid-template-columns: 1fr;">
+              <div class="stat"><b>35%</b><span>Better forecast accuracy</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Healthcare Scheduling Suite</h3>
+            <p>Centralized patient scheduling with automated reminders.</p>
+            <div class="stats" style="margin-top: 24px; grid-template-columns: 1fr;">
+              <div class="stat"><b>28%</b><span>Fewer no-shows</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Logistics Control Tower</h3>
+            <p>Live fleet visibility and routing optimization.</p>
+            <div class="stats" style="margin-top: 24px; grid-template-columns: 1fr;">
+              <div class="stat"><b>22%</b><span>Fewer delivery delays</span></div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section-wrap" aria-label="testimonials">
-      <h2 class="section-title">Client Feedback</h2>
-      <p class="section-sub">Stakeholders who value clarity, governance, and speed to value.</p>
-      <div class="grid-3">
-        <div class="testimonial">
-          <p>“Solutions-XE aligned our stakeholders and delivered within a complex regulatory environment.”</p>
-          <span>Chief Risk Officer, Financial Services</span>
+    <section class="section section--tight" style="background: var(--white);" aria-label="Testimonials">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow__mark" aria-hidden="true">↗</span> Feedback</p>
+          <h2>Stakeholders who value clarity and speed.</h2>
         </div>
-        <div class="testimonial">
-          <p>“Their delivery team is disciplined, transparent, and strongly outcome-driven.”</p>
-          <span>VP Transformation, Retail Group</span>
-        </div>
-        <div class="testimonial">
-          <p>“We saw immediate operational gains after launch. The roadmap is now clear and executable.”</p>
-          <span>Director of Operations, Logistics</span>
+        <div class="grid-3">
+          <blockquote class="testimonial">
+            <p>“Solutions-XE aligned our stakeholders and delivered within a complex regulatory environment.”</p>
+            <span>Chief Risk Officer, Financial Services</span>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>“Their delivery team is disciplined, transparent, and strongly outcome-driven.”</p>
+            <span>VP Transformation, Retail Group</span>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>“We saw immediate operational gains after launch. The roadmap is now clear and executable.”</p>
+            <span>Director of Operations, Logistics</span>
+          </blockquote>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="wrap">Solutions-XE © 2022-2026 | Building intelligent products that matter.</footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".nav");
-      if (!toggle || !nav) return;
-      const closeBtn = nav.querySelector(".menu-close");
-      const navLinks = nav.querySelectorAll("a");
-      const closeMenu = () => {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("menu-open");
-      };
-
-      toggle.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        document.body.classList.toggle("menu-open", isOpen);
-      });
-
-      if (closeBtn) closeBtn.addEventListener("click", closeMenu);
-      navLinks.forEach((link) => link.addEventListener("click", closeMenu));
-    });
-  </script>
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <a href="index.html" aria-label="Solutions-XE home"><img class="footer-logo" src="assets/logo-lockup-footer.svg" alt="Solutions-XE" width="228" height="60" /></a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-meta">Solutions-XE © 2025–2026 · Intelligence, engineered in every direction.</p>
+    </div>
+  </footer>
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

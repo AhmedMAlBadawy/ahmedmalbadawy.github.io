@@ -7,14 +7,21 @@ const base = path.join(__dirname, "..");
 
 const SITE = "https://solutionsxe.org";
 
+const FONT_LINK =
+  '  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />';
+
 const metaByFile = {
   "index.html": {
-    desc: "Solutions-XE — intelligent software products, enterprise delivery, and AI-ready platforms for healthcare, retail, and more.",
-    ogTitle: "Solutions-XE | Intelligent Software Products",
+    desc: "Solutions-XE — AI products and digital transformation for Egypt, the GCC, and Europe. Intelligence, engineered in every direction.",
+    ogTitle: "Solutions-XE | Intelligence, engineered in every direction",
   },
   "services.html": {
     desc: "Enterprise services for digital transformation, product engineering, cloud, data & AI, and team augmentation.",
     ogTitle: "Solutions-XE | Services",
+  },
+  "products.html": {
+    desc: "Explore Solutions-XE products: CuraX Medical AI Assistant and the Smart Medical Tourism Platform.",
+    ogTitle: "Solutions-XE | Products",
   },
   "case-studies.html": {
     desc: "Case studies and delivery highlights: modernization, analytics, healthcare, and logistics outcomes.",
@@ -42,94 +49,46 @@ const metaByFile = {
   },
 };
 
+function navFor(active) {
+  const link = (href, label, key) => {
+    if (key === "contact") {
+      const cls = active === "contact" ? "btn primary active" : "btn primary";
+      return `        <a class="${cls}" href="contact.html">Talk to us</a>`;
+    }
+    const cls = active === key ? ' class="active"' : "";
+    return `        <a${cls} href="${href}">${label}</a>`;
+  };
+
+  return `      <nav class="nav" aria-label="primary">
+        <button class="menu-close" type="button" aria-label="Close menu">×</button>
+${link("index.html", "Home", "home")}
+${link("services.html", "Services", "services")}
+${link("products.html", "Products", "products")}
+${link("case-studies.html", "Case Studies", "case-studies")}
+${link("insights.html", "Insights", "insights")}
+${link("about.html", "About", "about")}
+${link("contact.html", "Talk to us", "contact")}
+      </nav>`;
+}
+
 const navByFile = {
-  "index.html": `      <nav class="nav" aria-label="primary">
-        <button class="menu-close" type="button" aria-label="close menu">×</button>
-        <a class="active" href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="products.html">Products</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="insights.html">Insights</a>
-        <a href="about.html">About</a>
-        <a class="cta" href="contact.html">Contact</a>
-      </nav>`,
-  "services.html": `      <nav class="nav" aria-label="primary">
-        <button class="menu-close" type="button" aria-label="close menu">×</button>
-        <a href="index.html">Home</a>
-        <a class="active" href="services.html">Services</a>
-        <a href="products.html">Products</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="insights.html">Insights</a>
-        <a href="about.html">About</a>
-        <a class="cta" href="contact.html">Contact</a>
-      </nav>`,
-  "case-studies.html": `      <nav class="nav" aria-label="primary">
-        <button class="menu-close" type="button" aria-label="close menu">×</button>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="products.html">Products</a>
-        <a class="active" href="case-studies.html">Case Studies</a>
-        <a href="insights.html">Insights</a>
-        <a href="about.html">About</a>
-        <a class="cta" href="contact.html">Contact</a>
-      </nav>`,
-  "insights.html": `      <nav class="nav" aria-label="primary">
-        <button class="menu-close" type="button" aria-label="close menu">×</button>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="products.html">Products</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a class="active" href="insights.html">Insights</a>
-        <a href="about.html">About</a>
-        <a class="cta" href="contact.html">Contact</a>
-      </nav>`,
-  "about.html": `      <nav class="nav" aria-label="primary">
-        <button class="menu-close" type="button" aria-label="close menu">×</button>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="products.html">Products</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="insights.html">Insights</a>
-        <a class="active" href="about.html">About</a>
-        <a class="cta" href="contact.html">Contact</a>
-      </nav>`,
-  "contact.html": `      <nav class="nav" aria-label="primary">
-        <button class="menu-close" type="button" aria-label="close menu">×</button>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="products.html">Products</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="insights.html">Insights</a>
-        <a href="about.html">About</a>
-        <a class="cta active" href="contact.html">Contact</a>
-      </nav>`,
-  "medical-tourism-platform.html": `      <nav class="nav" aria-label="primary">
-        <button class="menu-close" type="button" aria-label="close menu">×</button>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a class="active" href="products.html">Products</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="insights.html">Insights</a>
-        <a href="about.html">About</a>
-        <a class="cta" href="contact.html">Contact</a>
-      </nav>`,
-  "curax.html": `      <nav class="nav" aria-label="primary">
-        <button class="menu-close" type="button" aria-label="close menu">×</button>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a class="active" href="products.html">Products</a>
-        <a href="case-studies.html">Case Studies</a>
-        <a href="insights.html">Insights</a>
-        <a href="about.html">About</a>
-        <a class="cta" href="contact.html">Contact</a>
-      </nav>`,
+  "index.html": navFor("home"),
+  "services.html": navFor("services"),
+  "products.html": navFor("products"),
+  "case-studies.html": navFor("case-studies"),
+  "insights.html": navFor("insights"),
+  "about.html": navFor("about"),
+  "contact.html": navFor("contact"),
+  "medical-tourism-platform.html": navFor("products"),
+  "curax.html": navFor("products"),
 };
 
 function headExtras(file) {
   const m = metaByFile[file];
   if (!m) throw new Error("no meta for " + file);
   const url = `${SITE}/${file}`;
-  return `  <link rel="stylesheet" href="assets/css/site.css?v=3" />
+  return `${FONT_LINK}
+  <link rel="stylesheet" href="assets/css/site.css?v=4" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#1f2b47" />
   <meta name="description" content="${m.desc.replace(/"/g, "&quot;")}" />
@@ -148,23 +107,19 @@ function processFile(file) {
   }
   let html = fs.readFileSync(fp, "utf8");
   if (!navByFile[file]) return;
-  if (html.includes("assets/css/site.css")) {
+
+  html = html.replace(
+    /<nav class="nav" aria-label="primary">[\s\S]*?<\/nav>/,
+    navByFile[file]
+  );
+
+  if (!html.includes("assets/js/site.js")) {
     html = html.replace(
-      /<nav class="nav" aria-label="primary">[\s\S]*?<\/nav>/,
-      navByFile[file]
-    );
-  } else {
-    html = html.replace(/<style>[\s\S]*?<\/style>\s*/, "");
-    html = html.replace(/^\s*<link rel="stylesheet" href="assets\/css\/site\.css"[\s\S]*?<meta property="og:url"[^>]*\/>\s*/m, "");
-    html = html.replace(
-      /(<link href="https:\/\/fonts\.googleapis\.com\/css2[^>]+\/>)\s*/,
-      `$1\n${headExtras(file)}`
-    );
-    html = html.replace(
-      /<nav class="nav" aria-label="primary">[\s\S]*?<\/nav>/,
-      navByFile[file]
+      /<\/body>/,
+      '  <script src="assets/js/site.js" defer></script>\n</body>'
     );
   }
+
   fs.writeFileSync(fp, html, "utf8");
   console.log("updated", file);
 }

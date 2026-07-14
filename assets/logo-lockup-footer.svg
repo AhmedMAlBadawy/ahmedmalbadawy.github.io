@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="200" viewBox="0 0 760 200" fill="none">
+  <g transform="translate(100 100) scale(1.4)">
+    <g transform="translate(-50 -50)">
+      <g transform="translate(50 50) rotate(-45)">
+        <polygon points="0,-8 0,-38 -8,-30 0,-38 8,-30" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></polygon>
+      </g>
+      <g transform="translate(50 50) rotate(45)">
+        <polygon points="0,-8 0,-38 -8,-30 0,-38 8,-30" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></polygon>
+      </g>
+      <g transform="translate(50 50) rotate(135)">
+        <polygon points="0,-8 0,-38 -8,-30 0,-38 8,-30" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></polygon>
+      </g>
+      <g transform="translate(50 50) rotate(-135)">
+        <polygon points="0,-8 0,-38 -8,-30 0,-38 8,-30" fill="none" stroke="#fb923c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></polygon>
+      </g>
+      <circle cx="50" cy="50" r="4" fill="#ffffff"></circle>
+    </g>
+  </g>
+  <text x="210" y="115" font-family="Geist, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-weight="500" font-size="56" letter-spacing="-2.2" fill="#ffffff">Solutions-XE</text>
+</svg>

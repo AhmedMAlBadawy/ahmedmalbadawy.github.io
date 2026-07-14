@@ -6,8 +6,8 @@
   <title>Solutions-XE | Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/site.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css?v=4" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#1f2b47" />
   <meta name="description" content="Enterprise services for digital transformation, product engineering, cloud, data & AI, and team augmentation." />
@@ -17,96 +17,110 @@
   <meta property="og:url" content="https://solutionsxe.org/services.html" />
 </head>
 <body>
-  <header class="wrap">
-    <div class="topbar">
-      <div class="brand"><span class="dot" aria-hidden="true"></span> Solutions-XE</div>
-      <button class="menu-toggle" type="button" aria-label="toggle menu" aria-expanded="false">
-        <span></span>
-      </button>
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand-link" href="index.html" aria-label="Solutions-XE home">
+        <img class="logo-lockup" src="assets/logo-lockup-nav.svg" alt="Solutions-XE" width="190" height="50" />
+        <img class="logo-mark" src="assets/logo-mark.svg" alt="" width="32" height="32" />
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
       <nav class="nav" aria-label="primary">
-        <button class="menu-close" type="button" aria-label="close menu">×</button>
+        <button class="menu-close" type="button" aria-label="Close menu">×</button>
         <a href="index.html">Home</a>
         <a class="active" href="services.html">Services</a>
         <a href="products.html">Products</a>
         <a href="case-studies.html">Case Studies</a>
         <a href="insights.html">Insights</a>
         <a href="about.html">About</a>
-        <a class="cta" href="contact.html">Contact</a>
+        <a class="btn primary" href="contact.html">Talk to us</a>
       </nav>
-      <span class="pill">Intelligent Product Studio</span>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero hero--page">
+  <main>
+    <section class="wrap hero hero--page">
+      <p class="eyebrow"><span class="eyebrow__mark" aria-hidden="true">↗</span> Services</p>
       <h1>Enterprise services built for scale, security, and speed.</h1>
-      <p class="sub">We deliver strategy, engineering, and operational excellence with a focus on measurable outcomes.</p>
+      <p class="sub">Strategy, engineering, and operational excellence with measurable outcomes.</p>
       <div class="actions">
-        <a class="btn primary" href="contact.html">Schedule a Consultation</a>
-        <a class="btn ghost" href="products.html">View products &amp; cases</a>
+        <a class="btn primary" href="contact.html">Talk to us</a>
+        <a class="btn secondary" href="products.html">See the product</a>
       </div>
     </section>
 
-    <section class="section-wrap" aria-label="services overview">
-      <h2 class="section-title">Service Lines</h2>
-      <p class="section-sub">End-to-end capabilities for transformation programs, new product delivery, and platform modernization.</p>
-      <div class="grid-3">
-        <div class="card-soft"><h3>Digital Transformation</h3><p>Enterprise modernization, workflow redesign, and customer journey optimization.</p></div>
-        <div class="card-soft"><h3>Product Engineering</h3><p>Secure, scalable products with strong UX and operational reliability.</p></div>
-        <div class="card-soft"><h3>Data & AI Enablement</h3><p>Data platforms, analytics, and intelligent product features.</p></div>
-        <div class="card-soft"><h3>Cloud & DevOps</h3><p>Cloud migration, infrastructure automation, and performance optimization.</p></div>
-        <div class="card-soft"><h3>Integration & APIs</h3><p>Enterprise integration, systems interoperability, and API strategy.</p></div>
-        <div class="card-soft"><h3>Team Augmentation</h3><p>Dedicated squads and specialized talent embedded in your delivery model.</p></div>
+    <section class="section" aria-label="Service lines">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow__mark" aria-hidden="true">↗</span> Service lines</p>
+          <h2>Capabilities across discovery, build, and scale.</h2>
+          <p class="section-sub">End-to-end delivery for transformation programs, new products, and platform modernization.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><g transform="translate(20 20) rotate(-45)"><polygon points="0,-4 0,-16 -4,-12 0,-16 4,-12" fill="none" stroke="#1f2b47" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polygon></g></svg></div>
+            <h3>Digital Transformation</h3>
+            <p>Enterprise modernization, workflow redesign, and customer journey optimization.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><g transform="translate(20 20) rotate(45)"><polygon points="0,-4 0,-16 -4,-12 0,-16 4,-12" fill="none" stroke="#1f2b47" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polygon></g></svg></div>
+            <h3>Product Engineering</h3>
+            <p>Secure, scalable products with strong UX and operational reliability.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><g transform="translate(20 20) rotate(135)"><polygon points="0,-4 0,-16 -4,-12 0,-16 4,-12" fill="none" stroke="#1f2b47" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polygon></g></svg></div>
+            <h3>Data &amp; AI Enablement</h3>
+            <p>Data platforms, analytics, and intelligent product features.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><g transform="translate(20 20) rotate(-135)"><polygon points="0,-4 0,-16 -4,-12 0,-16 4,-12" fill="none" stroke="#1f2b47" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polygon></g></svg></div>
+            <h3>Cloud &amp; DevOps</h3>
+            <p>Cloud migration, infrastructure automation, and performance optimization.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><g transform="translate(20 20) rotate(-45)"><polygon points="0,-4 0,-16 -4,-12 0,-16 4,-12" fill="none" stroke="#1f2b47" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polygon></g></svg></div>
+            <h3>Integration &amp; APIs</h3>
+            <p>Enterprise integration, systems interoperability, and API strategy.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><g transform="translate(20 20) rotate(45)"><polygon points="0,-4 0,-16 -4,-12 0,-16 4,-12" fill="none" stroke="#1f2b47" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></polygon></g></svg></div>
+            <h3>Team Augmentation</h3>
+            <p>Dedicated squads and specialists embedded in your delivery model.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section-wrap" aria-label="delivery process">
-      <h2 class="section-title">Delivery Process</h2>
-      <p class="section-sub">A disciplined execution model that reduces risk and accelerates time-to-value.</p>
-      <div class="process">
-        <div class="process-step"><b>01. Discovery</b><p>Define outcomes, constraints, and success metrics.</p></div>
-        <div class="process-step"><b>02. Solution Design</b><p>Architecture, roadmap, and governance alignment.</p></div>
-        <div class="process-step"><b>03. Build & Integrate</b><p>Agile delivery with security and quality gates.</p></div>
-        <div class="process-step"><b>04. Launch & Scale</b><p>Operational handover, monitoring, and continuous improvement.</p></div>
+    <section class="section section--tight" style="background: var(--white);" aria-label="Delivery process">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow__mark" aria-hidden="true">↗</span> Delivery process</p>
+          <h2>Four steps. Clear accountability.</h2>
+          <p class="section-sub">A disciplined model that reduces risk and accelerates time-to-value.</p>
+        </div>
+        <div class="process">
+          <div class="process-step"><b>01</b><div class="step-title">Discovery</div><p>Define outcomes, constraints, and success metrics.</p></div>
+          <div class="process-step"><b>02</b><div class="step-title">Solution design</div><p>Architecture, roadmap, and governance alignment.</p></div>
+          <div class="process-step"><b>03</b><div class="step-title">Build &amp; integrate</div><p>Agile delivery with security and quality gates.</p></div>
+          <div class="process-step"><b>04</b><div class="step-title">Launch &amp; scale</div><p>Operational handover, monitoring, and continuous improvement.</p></div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="wrap">Solutions-XE © 2022-2026 | Building intelligent products that matter.</footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".nav");
-      if (!toggle || !nav) return;
-      const closeBtn = nav.querySelector(".menu-close");
-      const navLinks = nav.querySelectorAll("a");
-      const closeMenu = () => {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("menu-open");
-      };
-
-      toggle.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        document.body.classList.toggle("menu-open", isOpen);
-      });
-
-      if (closeBtn) closeBtn.addEventListener("click", closeMenu);
-      navLinks.forEach((link) => link.addEventListener("click", closeMenu));
-    });
-  </script>
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <a href="index.html" aria-label="Solutions-XE home"><img class="footer-logo" src="assets/logo-lockup-footer.svg" alt="Solutions-XE" width="228" height="60" /></a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="insights.html">Insights</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-meta">Solutions-XE © 2025–2026 · Intelligence, engineered in every direction.</p>
+    </div>
+  </footer>
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
