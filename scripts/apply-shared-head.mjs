@@ -89,7 +89,9 @@ function headExtras(file) {
   const url = `${SITE}/${file}`;
   return `${FONT_LINK}
   <link rel="stylesheet" href="assets/css/site.css?v=5" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2" />
   <meta name="theme-color" content="#1f2b47" />
   <meta name="description" content="${m.desc.replace(/"/g, "&quot;")}" />
   <meta property="og:type" content="website" />
