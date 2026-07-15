@@ -495,6 +495,25 @@ h3 {
   }
 }
 
+/* —— Team —— */
+.team-card h3 {
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--slate-500);
+}
+
+.team-focus {
+  color: var(--slate-500);
+  font-size: var(--text-base);
+  margin-top: 8px;
+}
+
 /* —— Cards & grids —— */
 .grid-3 {
   display: grid;

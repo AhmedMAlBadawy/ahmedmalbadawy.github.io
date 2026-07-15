@@ -88,7 +88,7 @@ function headExtras(file) {
   if (!m) throw new Error("no meta for " + file);
   const url = `${SITE}/${file}`;
   return `${FONT_LINK}
-  <link rel="stylesheet" href="assets/css/site.css?v=4" />
+  <link rel="stylesheet" href="assets/css/site.css?v=5" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#1f2b47" />
   <meta name="description" content="${m.desc.replace(/"/g, "&quot;")}" />
